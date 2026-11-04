@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Runtime data (SQLite logs are local only)
+*.db
+*.db-journal
+
+# Secrets — never commit these
+.env
+*.pem
+*.key
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

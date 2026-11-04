@@ -1,0 +1,20 @@
+# Versioned prompt registry. Prompts are templates rendered with {variables}.
+# Fetch by name + version; "latest" resolves to the highest version number.
+prompts:
+  - name: "support-reply"
+    version: 1
+    template: "You are a helpful support assistant. Answer concisely: {question}"
+  - name: "support-reply"
+    version: 2
+    template: >-
+      You are a helpful support assistant. Answer in at most three sentences,
+      in a friendly tone: {question}
+  - name: "summarize"
+    version: 1
+    template: "Summarize the following text in one paragraph:\n{text}"
+  - name: "code-review"
+    version: 1
+    template: >-
+      Review the following code for bugs and readability. List issues as
+      bullet points, then give a verdict (approve / needs changes):
+      {code}

@@ -1,0 +1,31 @@
+# Model routing + pricing. Prices are illustrative public-list style numbers
+# used ONLY for cost estimation in logs; they are not bills.
+server:
+  host: "127.0.0.1"
+  port: 8000
+
+routing:
+  default_model: "mock-llm-v1"
+  models:
+    mock-llm-v1:
+      provider: "mock"
+      price_per_1k_prompt_tokens: 0.0
+      price_per_1k_completion_tokens: 0.0
+    gpt-4o-mini:
+      provider: "openai"
+      price_per_1k_prompt_tokens: 0.00015
+      price_per_1k_completion_tokens: 0.0006
+    claude-haiku:
+      provider: "anthropic"
+      price_per_1k_prompt_tokens: 0.00025
+      price_per_1k_completion_tokens: 0.00125
+
+guardrails:
+  max_prompt_chars: 4000
+  max_completion_chars: 2000
+  # Demo content-policy list. Requests containing any of these (case-insensitive)
+  # are rejected before they reach a model.
+  blocked_words:
+    - "bypass-auth"
+    - "dump-credentials"
+    - "disable-audit-logging"
